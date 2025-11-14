@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "package.json", "use": "@vercel/next" }
+  ],
+  "env": {
+    "TMDB_API_KEY": "",
+    "NEXT_PUBLIC_SENTRY_DSN": ""
+  }
+}
