@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import { getDetails } from '@/lib/api/tmdb'
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const id = Number(params.id)
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id: idParam } = await params
+  const id = Number(idParam)
   const movie = await getDetails(id)
   if (!movie) return <main><p>Movie not found.</p></main>
   return (

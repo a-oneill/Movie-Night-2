@@ -45,7 +45,8 @@ class RateLimiter {
       this.timestamps.push(now)
       return
     }
-    const waitMs = this.intervalMs - (now - this.timestamps[0])
+    const oldestTimestamp = this.timestamps[0]
+    const waitMs = oldestTimestamp ? this.intervalMs - (now - oldestTimestamp) : 0
     await new Promise(r => setTimeout(r, Math.max(waitMs, 0)))
     this.timestamps = this.timestamps.filter(t => Date.now() - t < this.intervalMs)
     this.timestamps.push(Date.now())

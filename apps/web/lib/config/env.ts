@@ -1,7 +1,7 @@
 export type Env = {
   TMDB_API_KEY: string
-  NEXT_PUBLIC_SENTRY_DSN?: string
-  NEXT_PUBLIC_APP_URL?: string
+  NEXT_PUBLIC_SENTRY_DSN: string | undefined
+  NEXT_PUBLIC_APP_URL: string
 }
 
 export function getEnv(): Env {

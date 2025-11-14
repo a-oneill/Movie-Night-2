@@ -15,7 +15,7 @@ describe('tmdbClient', () => {
       new Response(JSON.stringify({ ok: true }), { status: 200 })
     ]
     let i = 0
-    vi.spyOn(global, 'fetch').mockImplementation(async () => responses[i++])
+    vi.spyOn(global, 'fetch').mockImplementation(async (): Promise<Response> => responses[i++]!)
     const data = await tmdbGet('movie/popular', { language: 'en-US', page: 1 })
     expect((data as any).ok).toBe(true)
     expect((global.fetch as any).mock.calls.length).toBeGreaterThan(1)
