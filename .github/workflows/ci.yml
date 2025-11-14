@@ -38,19 +38,19 @@ jobs:
       - name: Run unit tests
         run: npm run test
 
+      - name: Create .env.local for build
+        run: |
+          echo "TMDB_API_KEY=${{ secrets.TMDB_API_KEY }}" >> .env.local
+          echo "NEXT_PUBLIC_APP_URL=https://example.com" >> .env.local
+
       - name: Build application
         run: npm run build
-        env:
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-          NEXT_PUBLIC_APP_URL: https://example.com
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
       - name: Run E2E tests
         run: npx playwright test
-        env:
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
 
       - name: Upload test results
         if: failure()
