@@ -1,5 +1,7 @@
 # Movie Night 2.0
 
+[![Deployment Status](https://img.shields.io/badge/deployed-vercel-black)](https://web-j7wwy575i-specialprojects001s-projects.vercel.app)
+
 A modern, production-ready movie discovery application built with Next.js 15, featuring an Anthropic-inspired design system.
 
 ## Features
