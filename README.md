@@ -113,3 +113,4 @@ MIT
 
 - Design inspiration: [Anthropic](https://www.anthropic.com)
 - Movie data: [The Movie Database (TMDB)](https://www.themoviedb.org)
+# Test deployment with root directory
