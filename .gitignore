@@ -15,12 +15,15 @@ build/
 dist/
 out/
 
-# Environment variables
+# Environment variables - NEVER commit these!
 .env
+.env.*
 .env.local
-.env.*.local
+.env.development
 .env.development.local
+.env.test
 .env.test.local
+.env.production
 .env.production.local
 
 # Next.js
