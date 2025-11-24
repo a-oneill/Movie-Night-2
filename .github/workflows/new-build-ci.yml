@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - 'new-build/**'
-      - '.github/workflows/new-build-ci.yml'
   pull_request:
     paths:
       - 'new-build/**'
