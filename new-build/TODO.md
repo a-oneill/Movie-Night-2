@@ -313,6 +313,10 @@
 - [ ] ESLint circular structure warning (non-fatal, doesn't block builds)
 - [ ] Sentry/OpenTelemetry dependency warning (from third-party package)
 - [ ] Consider porting useful features from original Application directory
+- [ ] GitHub Actions CI workflows temporarily disabled (quality and e2e jobs)
+  - Quality job (type-check, unit tests, build) failing - needs investigation
+  - E2E Playwright tests failing - needs investigation
+  - To re-enable: Remove `if: false` from .github/workflows/new-build-ci.yml
 
 ---
 
@@ -463,3 +467,16 @@
 - Root directory configured: `new-build/apps/web`
 - Environment variables secured in Vercel dashboard
 - Ready to add features from original app and continue building!
+
+**GitHub Actions Status:**
+- CI workflows temporarily disabled to prevent failure notification emails
+- Vercel handles all deployments automatically via Git integration
+- CI can be re-enabled later once test issues are resolved
+- Quality checks (type-check, unit tests, build) exist but need fixes
+- E2E Playwright tests exist but need debugging
+
+**Security Notes:**
+- All secrets removed from git history and rotated
+- .env.production now properly gitignored
+- TMDB API key stored securely in Vercel environment variables
+- Never commit API keys or tokens to repository
