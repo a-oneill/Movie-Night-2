@@ -1,0 +1,5 @@
+{
+  "name": "TMDB Fork Movie Night AI",
+  "description": "An AI-powered movie discovery app that helps you find the perfect film for your movie night. Search by genre, actors, directors, and more, or use the 'I'm feeling lucky' button for surprising suggestions. Built with Swiss design principles for a clean, minimalist experience. \nWITH ADDED TMDB Api",
+  "requestFramePermissions": []
+}
