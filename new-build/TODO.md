@@ -1,6 +1,6 @@
 # Movie Night 2.0 - Development Roadmap
 
-## ✅ Completed (Session 3 - December 2024)
+## ✅ Completed (Session 4 - November 2024)
 
 ### Core Infrastructure
 - [x] Next.js 15 setup with App Router
@@ -78,12 +78,31 @@
 
 ## 🚀 Priority 1: Immediate Next Steps
 
+### Bridge Feature Gap with Original Application
+**Goal:** Review original Movie Night app and identify missing features to port over
+
+**Original App Features to Review:**
+- [ ] Compare original Application directory features with new-build
+- [ ] Identify all components from original app (CarouselRow, HeroBanner, etc.)
+- [ ] Check for missing API integrations or functionality
+- [ ] Review original search/filter implementation
+- [ ] Assess which features should be ported vs rebuilt
+- [ ] Document feature parity checklist
+
+**Known Original Features:**
+- CarouselRow component (horizontal scrolling movie rows)
+- HeroBanner with featured content
+- WatchlistDrawer functionality
+- ErrorBoundary implementation
+- Additional services (geminiService.ts integration)
+
 ### Deployment & Testing
-- [ ] Test production deployment thoroughly
+- [x] Test production deployment thoroughly ✅
+- [x] Deploy successfully to Vercel ✅
 - [ ] Verify all search filters work in production
 - [ ] Test on mobile devices
 - [ ] Configure custom domain (optional)
-- [ ] Set up deployment preview for PRs (automatic with GitHub)
+- [x] Set up deployment preview for PRs (automatic with GitHub) ✅
 
 ### Movie Detail Page Enhancement
 **Status:** Basic scaffold exists, needs full features
@@ -291,9 +310,9 @@
 ### Current Tech Debt
 - [ ] Add proper error boundaries for runtime errors
 - [ ] Missing metadata for SEO (movie detail pages)
-- [ ] Two Vercel projects exist (web & new-build) - consider consolidating
 - [ ] ESLint circular structure warning (non-fatal, doesn't block builds)
 - [ ] Sentry/OpenTelemetry dependency warning (from third-party package)
+- [ ] Consider porting useful features from original Application directory
 
 ---
 
@@ -392,13 +411,26 @@
 - ✅ Prepared application for deployment
 - ✅ Created comprehensive consolidated TODO
 
+**Session 4 (Git-Vercel Pipeline & Security Fixes):**
+- ✅ Set up git repository and pushed to GitHub
+- ✅ Fixed git submodule issues - converted to regular directories
+- ✅ Configured Vercel project settings (Root Directory: new-build/apps/web)
+- ✅ Fixed GitHub Actions CI workflow (cache-dependency-path)
+- ✅ Resolved vercel.json schema validation errors
+- ✅ Removed exposed secrets from repository (.env.production)
+- ✅ Updated .gitignore to prevent future secret exposure
+- ✅ Rotated TMDB API key and Vercel OIDC token
+- ✅ Successfully deployed to production (https://web-nine-gray-61.vercel.app/)
+- ✅ Automatic deployments from main branch working
+
 ### Next Session Goals
 
 **Immediate (Next Session):**
-1. Deploy to Vercel and verify production functionality
+1. ~~Deploy to Vercel and verify production functionality~~ ✅ **DONE**
 2. Test all search filters in production
 3. Style movie detail page with full information
 4. Add trailers to movie detail page
+5. Compare with original app features and bridge gaps
 
 **This Week:**
 1. Complete movie detail page with all features
@@ -417,11 +449,17 @@
 ## 🎉 Project Status
 
 **Version**: 2.0.0-beta
-**Last Updated**: 2024-12-24
-**Status**: ✅ **Ready for Production Deployment**
+**Last Updated**: 2024-11-24
+**Status**: ✅ **DEPLOYED TO PRODUCTION**
 
-**Build Status**: ✅ Passing (with non-critical warnings)
-**Deployment Status**: ✅ Configured and ready
+**Build Status**: ✅ Passing (with non-critical ESLint warnings)
+**Deployment Status**: ✅ Live at https://web-nine-gray-61.vercel.app/
 **Core Features**: ✅ Search, Browse, Detail pages functional
+**CI/CD Pipeline**: ✅ Automatic deployments from main branch working
 
-**Great work! App is production-ready and set to auto-deploy! Ready to continue building! 🚀**
+**Deployment Setup Complete! 🚀**
+- GitHub → Vercel pipeline fully operational
+- Future features will automatically deploy on push to main
+- Root directory configured: `new-build/apps/web`
+- Environment variables secured in Vercel dashboard
+- Ready to add features from original app and continue building!
