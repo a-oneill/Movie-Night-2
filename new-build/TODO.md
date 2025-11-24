@@ -480,3 +480,11 @@
 - .env.production now properly gitignored
 - TMDB API key stored securely in Vercel environment variables
 - Never commit API keys or tokens to repository
+
+**Repository Structure:**
+- All active code is in `new-build/` directory
+- `Application/` contains original React app for reference only
+- Root-level duplicate directories removed (were from main branch merge)
+- **IMPORTANT:** Do NOT create duplicate files/directories at root level
+- Keep all new development inside `new-build/apps/web/`
+- Vercel Root Directory is configured to `new-build/apps/web`
